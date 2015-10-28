@@ -165,6 +165,8 @@ fetch_auxv()
 
 
 int prefetch_auxv(void)
+__attribute__ ((deprecated ("Warning: libauxv is going to be discontinued. "
+		"Please use glibc's getauxval() instead.")))
 {
   ElfW(auxv_t) *auxv_temp = (ElfW(auxv_t) *)auxv_buf;
 
@@ -196,12 +198,16 @@ int prefetch_auxv(void)
 
 ElfW(auxv_t) *
 get_auxv(void)
+__attribute__ ((deprecated ("Warning: libauxv is going to be discontinued. "
+		"Please use glibc's getauxval() instead.")))
 {
   return (ElfW(auxv_t) *)auxv_buf;
 }
 
 ElfW(Addr)
 query_auxv(ElfW(Addr) type)
+__attribute__ ((deprecated ("Warning: libauxv is going to be discontinued. "
+		"Please use glibc's getauxval() instead.")))
 {
   ElfW(auxv_t) *auxv_temp;
   long i = 0;
